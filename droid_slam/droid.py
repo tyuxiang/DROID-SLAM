@@ -56,7 +56,7 @@ class Droid:
         state_dict["update.delta.2.bias"] = state_dict["update.delta.2.bias"][:2]
 
         self.net.load_state_dict(state_dict)
-        self.net.to("cuda:0").eval()
+        self.net.to("cuda").eval()
 
     def track(self, tstamp, image, depth=None, intrinsics=None):
         """ main thread - update map """
